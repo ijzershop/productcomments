@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>productcomments</name>
+    <displayName><![CDATA[Product Opmerkingen]]></displayName>
+    <version><![CDATA[9.3.4]]></version>
+    <description><![CDATA[Staat klanten toe om beoordelingen en een score te geven voor producten met speciale criterie.]]></description>
+    <author><![CDATA[Ijzershop]]></author>
+    <tab><![CDATA[front_office_features]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>
