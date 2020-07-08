@@ -115,7 +115,7 @@
 }
 .comments_note div.star, #productCommentsBlock div.star {
     display: inline-block;
-    float: left;
+    float: center;
     width: 18px;
     height: 18px;
 }

@@ -16,8 +16,8 @@
             {if $comments}
                 {foreach from=$comments item=comment}
                     {if $comment.content}
-                        <div class="comment clearfix">
-                            <div class="comment_author">
+                        <div class="comment clearfix row">
+                            <div class="comment_author col-12 col-sm-4">
                                 <div class="comment_product">
                                     {assign var="pImages" value=productcomments::getImagesByID($comment.id_product, 1)}
                                     {if $pImages}
@@ -25,13 +25,13 @@
                                             <a href="{Context::getContext()->link->getProductLink($comment.id_product)}">
                                                 <img src="{Context::getContext()->link->getImageLink($comment.link_rewrite, $image, 'cart_default')}"
                                                      {if $smarty.foreach.images.first}class="current img_{$smarty.foreach.images.index}"{else}
-                                                     class="img_{$smarty.foreach.images.index}"
+                                                     class="img_{$smarty.foreach.images.index} mx-auto"
                                                      style="display:none;"{/if}
                                                      alt="{$comment.name|escape:'htmlall':'UTF-8'}"/>
                                             </a>
                                         {/foreach}
                                     {/if}
-                                    <div class="star_content clearfix">
+                                    <div class="star_content clearfix mx-auto">
                                         {section name="i" start=0 loop=5 step=1}
                                             {if $comment.grade le $smarty.section.i.index}
                                                 <div class="star"></div>
@@ -46,7 +46,7 @@
                                     <em>{dateFormat date=$comment.date_add|escape:'html':'UTF-8' full=0}</em>
                                 </div>
                             </div>
-                            <div class="comment_details">
+                            <div class="comment_details col-12 col-sm-8">
                                 <h4 class="title_block">{$comment.title}</h4>
                                 <p>{$comment.content|escape:'html':'UTF-8'|nl2br nofilter}</p>
                                 <ul>
