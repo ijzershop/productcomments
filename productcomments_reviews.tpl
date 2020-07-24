@@ -32,7 +32,7 @@
 {/if}
 <div class="comments_note w-100">
     {if $averageTotal>0 && Configuration::get('PRODUCT_COMMENTS_LIST') == 1}
-        <div class="star_content clearfix col p-0" style="max-width:95px;">
+        <div class="star_content clearfix col p-0" style="max-width:110px;">
             {section name="i" start=0 loop=5 step=1}
                 {if $averageTotal le $smarty.section.i.index}
                     <div class="star"></div>
