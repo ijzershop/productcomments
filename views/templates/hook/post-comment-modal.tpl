@@ -118,7 +118,7 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12">
-              <label class="form-label" for="comment_content">{l s='Review' d='Modules.Productcomments.Shop'}<sup class="required">*</sup></label>
+              <label class="form-label" for="comment_content">{l s='Review' d='Modules.Productcomments.Shop'}</label>
             </div>
           </div>
           <div class="row">

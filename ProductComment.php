@@ -79,7 +79,7 @@ class ProductComment extends ObjectModel
 			'id_shop' =>		array('type' => self::TYPE_INT),
 			'customer_name' =>	array('type' => self::TYPE_STRING),
 			'title' =>			array('type' => self::TYPE_STRING),
-			'content' =>		array('type' => self::TYPE_STRING, 'validate' => 'isMessage', 'size' => 65535, 'required' => true),
+			'content' =>		array('type' => self::TYPE_STRING, 'validate' => 'isMessage', 'size' => 65535),
 			'grade' =>			array('type' => self::TYPE_FLOAT, 'validate' => 'isFloat'),
 			'validate' =>		array('type' => self::TYPE_BOOL, 'validate' => 'isBool'),
 			'deleted' =>		array('type' => self::TYPE_BOOL),

@@ -98,8 +98,8 @@ class ProductCommentsDefaultModuleFrontController extends ModuleFrontController
 			$errors[] = $module_instance->l('Product ID is incorrect', 'default');
 		if (!Tools::getValue('title') || !Validate::isGenericName(Tools::getValue('title')))
 			$errors[] = $module_instance->l('Title is incorrect', 'default');
-		if (!Tools::getValue('content') || !Validate::isMessage(Tools::getValue('content')))
-			$errors[] = $module_instance->l('Comment is incorrect', 'default');
+		// if (!Tools::getValue('content') || !Validate::isMessage(Tools::getValue('content')))
+		// 	$errors[] = $module_instance->l('Comment is incorrect', 'default');
 		if (!$id_customer && (!Tools::isSubmit('customer_name') || !Tools::getValue('customer_name') || !Validate::isGenericName(Tools::getValue('customer_name'))))
 			$errors[] = $module_instance->l('Customer name is incorrect', 'default');
 		if (!$this->context->customer->id && !Configuration::get('PRODUCT_COMMENTS_ALLOW_GUESTS'))

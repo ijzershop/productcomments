@@ -44,8 +44,20 @@
         {foreach from=$comments item=comment}
         {if $comment.content}
         <div class="comment clearfix row" itemprop="review" itemscope itemtype="https://schema.org/Review">
+<div class="col-2">
+      <table class="comment-icon w-100 h-100 text-center">
+        <tr>
+          <td class="valign-middle">
+            <i class="fas fa-comment fa-4x"></i>
+          </td>
+        </tr>
+      </table>
+
+</div>
+<div class="col-10">
+  <div class="row">
             <div class="comment_author_infos col-8 pl-0">
-              <strong itemprop="author">{$comment.customer_name|escape:'html':'UTF-8'}</strong> <em>{$comment.date_add|escape:'html':'UTF-8'|date_format:"d-m-Y H:m"}</em>
+              <strong class="h5 text-dark" itemprop="author">{$comment.customer_name|escape:'html':'UTF-8'}</strong> <em>({$comment.date_add|escape:'html':'UTF-8'|date_format:"d M Y"})</em>
               <meta itemprop="datePublished" content="{$comment.date_add|escape:'html':'UTF-8'|date_format:"d-m-Y H:m"}" />
             </div>
             <div class="star_content clearfix col-4" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
@@ -61,11 +73,11 @@
               <meta itemprop="bestRating" content="5" />
           </div>
           <div class="comment_details w-100">
-            <div class="w-100 p-2 text-dark">
+            <div class="w-100 text-dark">
             <h6 class="title_block w-100 p-0 m-0 mt-2" itemprop="name">{$comment.title}</h6>
-            <p itemprop="reviewBody" class="w-100">{$comment.content|escape:'html':'UTF-8'|nl2br nofilter}</p>
+            <p itemprop="reviewBody" class="w-100">{if !empty($comment.content)}{$comment.content|escape:'html':'UTF-8'|nl2br nofilter}{else}Voor deze beoordeling is geen bericht geschreven{/if}</p>
             </div>
-            <ul class="list-unstyled w-100">
+{*             <ul class="list-unstyled w-100">
               {if isset($comment.total_advice) && $comment.total_advice > 0}
               <li>{l s='%1$d out of %2$d people found this review useful.' sprintf=[$comment.total_useful,$comment.total_advice] mod='productcomments'}</li>
               {/if}
@@ -80,15 +92,13 @@
               <li><span class="report_btn" data-id-product-comment="{$comment.id_product_comment}">{l s='Report abuse' mod='productcomments'}</span></li>
               {/if}
               {/if}
-            </ul>
+            </ul> *}
             {hook::exec('displayProductComment', $comment) nofilter}
           </div>
-
-
-
-
-
         </div>
+        </div>
+</div>
+
         {/if}
         {/foreach}
       </div>
@@ -165,7 +175,7 @@
               <input id="comment_title" class="form-control" name="title" type="text" value="" />
               </div>
               <div class="form-group mt-2">
-                  <label for="content">{l s='Your review' mod='productcomments'}<sup class="required">*</sup></label>
+                  <label for="content">{l s='Your review' mod='productcomments'}</label>
                   <textarea id="content" class="form-control" name="content"></textarea>
               </div>
               {if $allow_guests == true && !$logged}
@@ -190,7 +200,7 @@
                           <input class="form-check-input" onchange="if($(this).is(':checked')){$('#submitNewMessage').removeClass('gdpr_disabled'); $('#submitNewMessage').removeAttr('disabled'); rebindClickButton();}else{$('#submitNewMessage').addClass('gdpr_disabled'); $('#submitNewMessage').off('click'); $('#submitNewMessage').attr('disabled', 1); }" id="gdpr_checkbox" type="checkbox">
                       {/literal}
                     <label class="form-check-label" for="gdpr_checkbox">
-                      {l s='I accept ' mod='productcomments'} <a target="_blank" href="{$link->getCmsLink($PRODUCT_COMMENTS_GDPRCMS)}">{l s='privacy policy' mod='productcomments'}</a> {l s='rules' mod='productcomments'}
+                      {l s='I accepteer de' mod='productcomments'} <a target="_blank" href="{$link->getCmsLink($PRODUCT_COMMENTS_GDPRCMS)}">{l s='privacy voorwaarden' mod='productcomments'}</a>
                     </label>
                         </div>
                       {/if}
