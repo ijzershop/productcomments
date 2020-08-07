@@ -38,9 +38,9 @@
   var moderation_active = true;
   </script>
   {if $comments}
-  <div id="productCommentsBlock" class="w-100 mt-3">
+  <div id="productCommentsBlock" class="row mt-3">
     <span class="col-12" style="font-size:15px;font-weight:bold;color:#777777;font-family:Helvetica, Tahoma, sans-serif, Arial;">Beoordelingen voor dit product</span>
-      <div id="product_comments_block_tab" class="col-12">
+      <div id="product_comments_block_tab" class="col-12 pl-0 pr-0">
         {foreach from=$comments item=comment}
         {if $comment.content}
         <div class="comment clearfix row" itemprop="review" itemscope itemtype="https://schema.org/Review">
