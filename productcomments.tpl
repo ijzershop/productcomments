@@ -52,7 +52,6 @@
           </td>
         </tr>
       </table>
-
 </div>
 <div class="col-10">
   <div class="row">
