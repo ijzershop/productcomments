@@ -44,6 +44,15 @@ class ProductComments extends Module
 
     private $_productCommentsCriterionTypes = array();
     private $_baseUrl;
+    public $tabs = array(
+        array(
+            'name' => 'Beoordelingen',
+            'class_name' => 'AdminProductCommentsConfig',
+            'visible' => true,
+            'parent_class_name' => 'SELL',
+        )
+    );
+
 
     public function __construct()
     {
