@@ -32,7 +32,9 @@
 {/if}
 <div class="comments_note w-100">
     {if $averageTotal>0 && Configuration::get('PRODUCT_COMMENTS_LIST') == 1}
-        <div class="star_content clearfix col p-0" style="max-width:110px;">
+        <div class="star_content clearfix col p-0" style="max-width:110px;" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <span class="d-none" itemprop="ratingValue">{$averageTotal}</span>
+            <span class="d-none" itemprop="reviewCount">{$nbComments}</span>
             {section name="i" start=0 loop=5 step=1}
                 {if $averageTotal le $smarty.section.i.index}
                     <div class="star"></div>
