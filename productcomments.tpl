@@ -146,7 +146,7 @@
                     </div>
                   </div>
                   {/if}
-            
+
             <div class="new_comment_form_content col-12">
                 <div id="new_comment_form_error" class="error w-100" style="display:none;padding:15px 25px">
                     <ul></ul>
@@ -190,7 +190,7 @@
             <div class="w-100">
              <div id="new_comment_form_footer_done" class="col-12" style="display:none;">
                 <a href="#" class="btn btn-secondary btn-dark float-right " data-dismiss="modal">{l s='Close' mod='productcomments'}</a>
-            </div> 
+            </div>
              <div id="new_comment_form_footer" class="col-12">
                 <div class="row">
                   {if $PRODUCT_COMMENTS_GDPR == 1}
@@ -199,7 +199,7 @@
                           <input class="form-check-input" onchange="if($(this).is(':checked')){$('#submitNewMessage').removeClass('gdpr_disabled'); $('#submitNewMessage').removeAttr('disabled'); rebindClickButton();}else{$('#submitNewMessage').addClass('gdpr_disabled'); $('#submitNewMessage').off('click'); $('#submitNewMessage').attr('disabled', 1); }" id="gdpr_checkbox" type="checkbox">
                       {/literal}
                     <label class="form-check-label" for="gdpr_checkbox">
-                      {l s='I accepteer de' mod='productcomments'} <a target="_blank" href="{$link->getCmsLink($PRODUCT_COMMENTS_GDPRCMS)}">{l s='privacy voorwaarden' mod='productcomments'}</a>
+                      {l s='Ik accepteer de' mod='productcomments'} <a target="_blank" href="{$link->getCmsLink($PRODUCT_COMMENTS_GDPRCMS)}">{l s='privacy voorwaarden' mod='productcomments'}</a>
                     </label>
                         </div>
                       {/if}
