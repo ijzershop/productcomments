@@ -31,7 +31,7 @@
     {assign var="showText" value=$withtext}
 {/if}
 <div class="comments_note w-100">
-    {if $averageTotal>0 && Configuration::get('PRODUCT_COMMENTS_LIST') == 1}
+    {if $averageTotal > 0 && Configuration::get('PRODUCT_COMMENTS_LIST') == 1}
         <div class="star_content clearfix col p-0" style="max-width:110px;" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
             <span class="d-none" itemprop="ratingValue">{$averageTotal}</span>
             <span class="d-none" itemprop="reviewCount">{$nbComments}</span>
@@ -44,5 +44,10 @@
             {/section}
         </div>
         <span class="col p-0 {if !$showText}d-none{/if}">{l s='%s Review(s)' mod='productcomments' sprintf=[$nbComments]}&nbsp</span>
+    {else}
+            <div class="d-none" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                <span class="d-none" itemprop="ratingValue">5</span>
+                <span class="d-none" itemprop="reviewCount">1</span>
+            </div>
     {/if}
 </div>

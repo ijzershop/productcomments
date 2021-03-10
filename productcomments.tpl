@@ -105,6 +105,10 @@
             <input type="hidden" id="current-reviews-list-index" value="1" data-per-list="5">
             <button id="showMoreComments" class="btn btn-ouline-dark w-100">Toon meer beoordelingen</button>
           </div>
+        {else}
+                <div class="d-none" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                  <span class="d-none" itemprop="author">null</span>
+                </div>
         {/if}
 
 
